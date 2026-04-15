@@ -1,1 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PHISING WEBSITE DETECTOR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- hero - start -->
+<div class="bg-white pb-6 sm:pb-8 lg:pb-12">
+  <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+    <header class="mb-8 flex items-center justify-between py-4 md:mb-12 md:py-8 xl:mb-16">
+      <!-- logo - start -->
+      <a href="/" class="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl" aria-label="logo">
+        <svg width="95" height="94" viewBox="0 0 95 94" class="h-auto w-6 text-indigo-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M96 0V47L48 94H0V47L48 0H96Z" />
+        </svg>
+
+        PHISING WEBSITE DETECTION SYSTEM
+      </a>
+      <!-- logo - end -->
+
+      <!-- nav - start -->
+      <nav class="hidden gap-12 lg:flex">
+        <a href="#" class="text-lg font-semibold text-indigo-500">Home</a>
+        <a href="#" class="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700">Features</a>
+        <a href="#" class="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700">About</a>
+      </nav>
+      <!-- nav - end -->
+
+      <!-- buttons - start -->
+      <a href="#" class="hidden rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:inline-block">PHISING</a>
+
+      <button type="button" class="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+        </svg>
+
+        Menu
+      </button>
+      <!-- buttons - end -->
+    </header>
+
+    <!--MAIN FORM WORK-->
+    <p></p>
+    
+<!-- START: Phishing Detection Form Card (Form is the main container) -->
+<style>
+/* --- Form Card Specific Styles (Unified) --- */
+/* The main form tag gets the card styling */
+.detection-card-form {
+    width: 450px;
+    max-width: 90%;
+    /* Same background/shadow logic as your previous card */
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(8,10,30,0.6);
+    overflow: hidden;
+    margin: 50px auto; 
+    color: #07203a;
+    display: flex; /* Ensures content flows correctly */
+    flex-direction: column; /* Stacks header and content */
+}
+
+.card-header-bar-form {
+    /* Blue/Purple Gradient Header */
+    background: linear-gradient(90deg, #0077ff, #6a00f4);
+    padding: 18px 22px;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.6px;
+}
+
+.card-content-inner {
+    padding: 30px;
+    background: white; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #284055;
+}
+
+.url-input-form {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.url-input-form:focus {
+    outline: none;
+    border-color: #0077ff;
+}
+
+.check-button-form {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(90deg, #0077ff, #6a00f4);
+    box-shadow: 0 4px 15px rgba(106, 0, 244, 0.3);
+    transition: transform 0.2s;
+}
+
+.check-button-form:hover {
+    transform: translateY(-2px);
+}
+
+.result-display-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 10px;
+    font-weight: 700;
+    color: #00b37e; /* Safe/Success Green */
+}
+
+.result-icon-form {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #d9322f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+</style>
+
+<!-- FORM IS THE MAIN CONTAINER -->
+<form 
+    class="detection-card-form" 
+    id="phishingDetectionForm" 
+    action="/" 
+    method="POST"
+>
+    
+    <!-- Header Bar (Now inside the form) -->
+    <div class="card-header-bar-form">PHISHING WEBSITE DETECTION SYSTEM</div>
+
+    <!-- Content Area (Uses an inner DIV for white background) -->
+    <div class="card-content-inner">
+        
+        <div class="input-group-form">
+            <label for="url">Website URL:</label>
+            <input 
+                type="text" 
+                id="url" 
+                name="url" 
+                class="url-input-form" 
+                placeholder="https://example.com"
+                required
+            >
+        </div>
+        
+        <button type="submit" class="check-button-form">CHECK WEBSITE</button>
+
+        <!-- Result Section -->
+        <div class="result-display-form" id="result-placeholder-form">
+            {% if predict %}
+              {% if status == "danger" %} 
+                  <span style="color: rgb(218, 37, 37); font-weight: bold; font-size: 18px;">
+                    {{predict}} 
+                  </span>
+              
+              {% elif status == "safe" %}
+                  <span style="color: rgb(8, 162, 8); font-weight: bold; font-size: 18px;">
+                    {{ predict }}
+                  </span>
+            
+              {% else %}
+                  <span style="color: orange; font-weight: bold;">
+                    {{ predict }}
+                  </span>
+              {% endif %}
+            {% endif %} 
+        </div>
+        
+    </div>
+</form>
+<!-- END: Phishing Detection Form Card -->
+
+
+
+  </div>
+</div>
+
+
+
+
+
+<!-- hero - end -->
+ <section id="features">
+    <h3>Features</h3>
+    <div class="features">
+      <div class="card">
+        <h4>🔍 URL Analysis</h4>
+        <p>Analyzes URL structure and suspicious patterns.</p>
+      </div>
+      <div class="card">
+        <h4>🤖 ML Model</h4>
+        <p>Trained on real phishing and legitimate datasets for accurate predictions.</p>
+      </div>
+      <div class="card">
+        <h4>📈 Continuous Learning</h4>
+        <p>Model improves by learning new phishing patterns over time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="process">
+    <h3>Detection Process</h3>
+    <div class="process">
+      <div class="card">
+        <h4>1️⃣ Input URL</h4>
+        <p>Enter the suspicious website link into the system.</p>
+      </div>
+      <div class="card">
+        <h4>2️⃣ Extract Features</h4>
+        <p>URL features like length, prefix, domain, etc., are extracted.</p>
+      </div>
+      <div class="card">
+        <h4>3️⃣ ML Prediction</h4>
+        <p>Machine learning model classifies it as phishing or legitimate.</p>
+      </div>
+      <div class="card">
+        <h4>4️⃣ Display Result</h4>
+        <p>The result is displayed to the user instantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Phishing Detection System | Developed by Team CyberDuo
+  </footer>
+  <style>
+  /* --- Only affects sections below the form --- */
+  section {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #001f3f, #6a0dad);
+    color: white;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    margin-top: 80px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+
+  .features, .process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+  }
+
+  footer {
+    background: linear-gradient(90deg, #007bff, #6a0dad);
+    color: white;
+    padding: 25px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-top: 2px solid rgba(255,255,255,0.2);
+  }
+</style>
+
+  <script>
+    // Theme Toggle
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      toggleBtn.textContent = body.classList.contains("dark-mode")
+        ? "☀️ Light Mode"
+        : "🌙 Dark Mode";
+    });
+
+    // Form Submit (Backend connection later)
+    document
+      .getElementById("phish-form")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        const url = document.getElementById("urlInput").value;
+        document.getElementById("result").textContent =
+          "🔍 Analyzing " + url + " ... (Model will process this)";
+      });
+  </script>
+  </body>
+
+       
+    
+</html>
